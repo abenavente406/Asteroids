@@ -1,0 +1,1 @@
+C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\AsteroidsContent\obj\x86\Debug\AsteroidsContent.contentprojResolveAssemblyReference.cache
