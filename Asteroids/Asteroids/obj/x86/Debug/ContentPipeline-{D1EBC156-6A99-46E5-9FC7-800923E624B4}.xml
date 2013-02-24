@@ -7,17 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\bg.xnb</Output>
-      <Time>2013-01-30T20:15:34.0545649-05:00</Time>
-    </Item>
-    <Item>
-      <Source>brackets.png</Source>
-      <Name>brackets</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\brackets.xnb</Output>
-      <Time>2013-01-30T20:15:34.0545649-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\bg.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>laserGreen.png</Source>
@@ -25,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\laserGreen.xnb</Output>
-      <Time>2013-01-30T20:15:34.070165-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\laserGreen.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>meteorBig.png</Source>
@@ -34,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\meteorBig.xnb</Output>
-      <Time>2013-01-30T20:15:34.070165-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\meteorBig.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>meteorSmall.png</Source>
@@ -43,17 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\meteorSmall.xnb</Output>
-      <Time>2013-01-30T20:15:34.070165-05:00</Time>
-    </Item>
-    <Item>
-      <Source>play.png</Source>
-      <Name>play</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\play.xnb</Output>
-      <Time>2013-01-30T20:15:34.085765-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\meteorSmall.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>player.png</Source>
@@ -61,44 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\player.xnb</Output>
-      <Time>2013-01-30T20:15:34.085765-05:00</Time>
-    </Item>
-    <Item>
-      <Source>quit.png</Source>
-      <Name>quit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\quit.xnb</Output>
-      <Time>2013-01-30T20:15:34.085765-05:00</Time>
-    </Item>
-    <Item>
-      <Source>title.png</Source>
-      <Name>title</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\title.xnb</Output>
-      <Time>2013-01-30T20:15:34.085765-05:00</Time>
-    </Item>
-    <Item>
-      <Source>SpriteFont1.spritefont</Source>
-      <Name>SpriteFont1</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2013-01-30T20:16:19.3903881-05:00</Time>
-    </Item>
-    <Item>
-      <Source>explosion.png</Source>
-      <Name>explosion</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\explosion.xnb</Output>
-      <Time>2013-02-15T21:53:23.0489302-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\player.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>explosion_sheet.png</Source>
@@ -106,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\explosion_sheet.xnb</Output>
-      <Time>2013-02-15T22:05:15.4796789-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\explosion_sheet.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Blank.png</Source>
@@ -115,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\Blank.xnb</Output>
-      <Time>2013-02-15T22:12:14.0976225-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\Blank.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>starfield.png</Source>
@@ -124,17 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield.xnb</Output>
-      <Time>2013-02-15T23:15:44.4135601-05:00</Time>
-    </Item>
-    <Item>
-      <Source>farback.png</Source>
-      <Name>farback</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\farback.xnb</Output>
-      <Time>2013-02-15T23:17:36.1219495-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>starfield_large.png</Source>
@@ -142,20 +79,29 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield_large.xnb</Output>
-      <Time>2013-02-15T23:25:28.867989-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield_large.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
-    <BuildSuccessful>true</BuildSuccessful>
+    <Item>
+      <Source>SpriteFont1.spritefont</Source>
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
+    </Item>
+    <BuildSuccessful>false</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{D1EBC156-6A99-46E5-9FC7-800923E624B4}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\AsteroidsContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\AsteroidsContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

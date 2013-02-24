@@ -22,3 +22,5 @@ C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Aster
 C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield.xnb
 C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\farback.xnb
 C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield_large.xnb
+C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\obj\x86\Debug\Asteroids.exe
+C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\obj\x86\Debug\Asteroids.pdb

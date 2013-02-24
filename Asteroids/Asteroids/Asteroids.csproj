@@ -63,6 +63,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GameHelperLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AsteroidsContent\GameHelperLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
@@ -88,15 +92,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
+    <Compile Include="GameHelperLibrary.dll" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\GameHelperLibrary\GameHelperLibrary\GameHelperLibrary.csproj">
-      <Project>{0FC0A4DE-BC3D-4B16-9C78-6AB679C0BC3D}</Project>
-      <Name>GameHelperLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AsteroidsContent\AsteroidsContent.contentproj">
       <Name>AsteroidsContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
