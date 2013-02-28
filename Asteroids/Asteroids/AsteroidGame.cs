@@ -85,12 +85,12 @@ namespace Asteroids
             // Load the explosion spritesheet and explosion animation
             explosionSheet = new SpriteSheet(Content.Load<Texture2D>("explosion_sheet"),
                 90, 90, GraphicsDevice);
-            explosion = new Animation(new Texture2D[] {explosionSheet.getSubImage(0, 0),
-                explosionSheet.getSubImage(1, 0), explosionSheet.getSubImage(2, 0),
-                explosionSheet.getSubImage(3, 0), explosionSheet.getSubImage(4, 0),
-                explosionSheet.getSubImage(0, 1),
-                explosionSheet.getSubImage(1, 1), explosionSheet.getSubImage(2, 1),
-                explosionSheet.getSubImage(3, 1), explosionSheet.getSubImage(4, 1),
+            explosion = new Animation(new Texture2D[] {explosionSheet.GetSubImage(0, 0),
+                explosionSheet.GetSubImage(1, 0), explosionSheet.GetSubImage(2, 0),
+                explosionSheet.GetSubImage(3, 0), explosionSheet.GetSubImage(4, 0),
+                explosionSheet.GetSubImage(0, 1),
+                explosionSheet.GetSubImage(1, 1), explosionSheet.GetSubImage(2, 1),
+                explosionSheet.GetSubImage(3, 1), explosionSheet.GetSubImage(4, 1),
                 Content.Load<Texture2D>("Blank") , Content.Load<Texture2D>("Blank")}, 100f);
 
             // Add the basic font to be used
@@ -156,7 +156,7 @@ namespace Asteroids
                     {
                         deadTime++;
                         if (deadTime > 60)
-                            explosion.currentFrame = explosion.images.Length - 2;
+                            explosion.CurrentFrame = explosion.Images.Length - 2;
                     }
                     else    // If the timer reaches the limit, reset timer and game
                     {
