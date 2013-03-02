@@ -16,12 +16,12 @@ namespace Asteroids
     {
         private SpriteFont font;
 
-        private string _message  = null;
-        private float  _duration = 0;
-        private float  _ticks = 0;
+        private string message  = null;
+        private float  duration = 0;
+        private float  ticks = 0;
 
-        public float   Duration { get { return _duration; } private set { _duration = value; } }
-        public string  Message  { get { return _message; } private set { _message = value; } }
+        public float   Duration { get { return duration; } private set { duration = value; } }
+        public string  Message  { get { return message; } private set { message = value; } }
         public bool finished = false;
 
         public OnScreenMessage(string message, float duration, SpriteFont font)
@@ -33,17 +33,17 @@ namespace Asteroids
 
         public void Display(Vector2 position, SpriteBatch batch, GameTime gameTime)
         {
-            _ticks += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            ticks += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (_ticks < _duration)
+            if (ticks < duration)
             {
-                float opacity = (_duration - _ticks) / (_duration);
+                float opacity = (duration - ticks) / (duration);
                 batch.DrawString(font, Message, position, Color.White * opacity);
             }
             else
             {
                 finished = true;
-                _ticks = 0;
+                ticks = 0;
             }
         }
     }

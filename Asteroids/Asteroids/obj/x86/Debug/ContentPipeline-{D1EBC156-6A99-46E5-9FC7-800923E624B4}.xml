@@ -91,6 +91,15 @@
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
       <Time>2013-01-30T20:16:19.3903881-05:00</Time>
     </Item>
+    <Item>
+      <Source>TitleFont.spritefont</Source>
+      <Name>TitleFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\TitleFont.xnb</Output>
+      <Time>2013-02-27T21:10:04.1849468-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{D1EBC156-6A99-46E5-9FC7-800923E624B4}</ContentProjectGUID>

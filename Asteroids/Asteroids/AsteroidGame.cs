@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Asteroids.Objects;
+using Asteroids.IO;
 using GameHelperLibrary;
 
 namespace Asteroids
@@ -22,7 +23,7 @@ namespace Asteroids
     public class AsteroidGame : Microsoft.Xna.Framework.Game
     {
 
-        public static GameStates gameState = GameStates.PLAYING;
+        public static GameStates gameState = GameStates.MAINMENU;
         public static ContentManager content;
         public static Player player;
 
@@ -39,6 +40,7 @@ namespace Asteroids
         private GraphicsDeviceManager graphics;
 
         private SpriteFont font;
+        private SpriteFont titleFont;
 
         private SpriteSheet explosionSheet;
         private Animation explosion;
@@ -51,7 +53,9 @@ namespace Asteroids
 
         AsteroidManager asteroids;
 
-        OnScreenMessage test;
+        OnScreenMessage gameOverMessage;
+
+        FileManager ioManager;
 
         public AsteroidGame()
         {
@@ -82,6 +86,8 @@ namespace Asteroids
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            ioManager = new FileManager();
+
             // Load the explosion spritesheet and explosion animation
             explosionSheet = new SpriteSheet(Content.Load<Texture2D>("explosion_sheet"),
                 90, 90, GraphicsDevice);
@@ -95,11 +101,12 @@ namespace Asteroids
 
             // Add the basic font to be used
             font = Content.Load<SpriteFont>("SpriteFont1");
+            titleFont = Content.Load<SpriteFont>("TitleFont");
 
             // Create the scrolling background
             background = Content.Load<Texture2D>("starfield_large");
             scrollingBackground.Load(GraphicsDevice, background);
-            test = new OnScreenMessage("G A M E    O V E R !", 3000f, font);
+            gameOverMessage = new OnScreenMessage("G A M E    O V E R !", 3000f, font);
         }
 
         protected override void UnloadContent() { }
@@ -125,7 +132,12 @@ namespace Asteroids
 
             // Checks the state of the game
             // The game updates like normal during playing and round over
-            if (gameState == GameStates.PLAYING || gameState == GameStates.ROUNDOVER)
+            if (gameState == GameStates.MAINMENU)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                    gameState = GameStates.PLAYING;
+            }
+            else if (gameState == GameStates.PLAYING || gameState == GameStates.ROUNDOVER)
             {
 
                 if (AsteroidManager.asteroids.Count == 0)
@@ -138,6 +150,7 @@ namespace Asteroids
                         player.Update(gameTime);
                     else
                     {
+                        ioManager.SaveScore("Anthony", (int)score);
                         gameState = GameStates.GAMEOVER;
                         return;
                     }
@@ -181,40 +194,52 @@ namespace Asteroids
                 // Draw the scrolling background in the back (of course)
                 scrollingBackground.Draw(spriteBatch);
 
-                if (gameState == GameStates.PLAYING || gameState == GameStates.ROUNDOVER)
+                if (gameState == GameStates.MAINMENU)
                 {
-                    // Draw the player, whether it be the ship or explosion
-                    if (player.alive)
-                        player.Draw(spriteBatch, gameTime);
-                    else
-                        explosion.Draw(spriteBatch, gameTime, player.Position - player.TextureOrigin);
-
-                    foreach (Shot s in shots)
-                        s.Draw(spriteBatch, gameTime);
-
-                    // Draw each object in the List<GameObject>
-                    asteroids.Draw(spriteBatch, gameTime);
+                    spriteBatch.DrawString(titleFont, "A S T E R O I D S", 
+                        new Vector2((WindowWidth / 2) - (titleFont.MeasureString(
+                            "A S T E R O I D S").X / 2) + 30, 150), Color.White);
+                    spriteBatch.DrawString(font, "To play, press <Enter>",
+                        new Vector2((WindowWidth / 2) - (font.MeasureString(
+                            "To play, press <Enter>").X / 2) + 25, 500), Color.White);
                 }
-                if (gameState == GameStates.GAMEOVER)
+                else
                 {
-                    test.Display(new Vector2(WindowWidth / 2 - font.MeasureString(test.Message).X / 2,
-                        WindowHeight / 2 - 100), spriteBatch, gameTime);
-
-                    if (test.finished)
+                    if (gameState == GameStates.PLAYING || gameState == GameStates.ROUNDOVER)
                     {
-                        gameState = GameStates.PLAYING;
-                        test.finished = false;
-                        ResetGameFull();
-                    }
-                }
+                        // Draw the player, whether it be the ship or explosion
+                        if (player.alive)
+                            player.Draw(spriteBatch, gameTime);
+                        else
+                            explosion.Draw(spriteBatch, gameTime, player.Position - player.TextureOrigin);
 
-                // Draw information to the screen
-                spriteBatch.DrawString(font, "S C O R E : " + GetScore(), new Vector2((WindowWidth / 2) -
-                    (font.MeasureString("S C O R E : " + GetScore()).X / 2), 10), Color.White);
-                spriteBatch.DrawString(font, "L I V E S : " + player.lives, new Vector2(10, WindowHeight - 30),
-                    Color.White);
-                spriteBatch.DrawString(font, "L E V E L : " + level, new Vector2(10, WindowHeight - 100),
-                    Color.White);
+                        foreach (Shot s in shots)
+                            s.Draw(spriteBatch, gameTime);
+
+                        // Draw each object in the List<GameObject>
+                        asteroids.Draw(spriteBatch, gameTime);
+                    }
+                    else if (gameState == GameStates.GAMEOVER)
+                    {
+                        gameOverMessage.Display(new Vector2(WindowWidth / 2 - font.MeasureString(gameOverMessage.Message).X / 2,
+                            WindowHeight / 2 - 100), spriteBatch, gameTime);
+
+                        if (gameOverMessage.finished)
+                        {
+                            gameState = GameStates.PLAYING;
+                            gameOverMessage.finished = false;
+                            ResetGameFull();
+                        }
+                    }
+
+                    // Draw information to the screen
+                    spriteBatch.DrawString(font, "S C O R E : " + GetScore(), new Vector2((WindowWidth / 2) -
+                        (font.MeasureString("S C O R E : " + GetScore()).X / 2), 10), Color.White);
+                    spriteBatch.DrawString(font, "L I V E S : " + player.lives, new Vector2(10, WindowHeight - 30),
+                        Color.White);
+                    spriteBatch.DrawString(font, "L E V E L : " + level, new Vector2(10, WindowHeight - 100),
+                        Color.White);
+                }
             }
             spriteBatch.End();
 
@@ -248,5 +273,6 @@ namespace Asteroids
         {
             return score.ToString();
         }
+
     }
 }

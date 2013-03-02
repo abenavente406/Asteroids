@@ -40,3 +40,4 @@ C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Aster
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Asteroids.pdb
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\GameHelperLibrary.dll
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\TitleFont.xnb
