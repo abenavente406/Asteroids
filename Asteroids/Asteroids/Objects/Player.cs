@@ -14,7 +14,7 @@ namespace Asteroids.Objects
 
         public bool alive    = true;
         public bool gameOver = false;
-        public int lives     = 10;
+        public int lives     = 3;
 
         private float thrustSpeed = 4.5f;
         private int shotCoolDown  = 0;

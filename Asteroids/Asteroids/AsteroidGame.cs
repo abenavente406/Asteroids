@@ -4,10 +4,8 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using Asteroids.Objects;
 using Asteroids.IO;
 using GameHelperLibrary;
@@ -17,13 +15,13 @@ namespace Asteroids
 
     public enum GameStates
     {
-        MAINMENU, PLAYING, ROUNDOVER, GAMEOVER
+        MAINMENU, PLAYING, ROUNDOVER, GAMEOVER, HIGHSCORES
     }
 
     public class AsteroidGame : Microsoft.Xna.Framework.Game
     {
 
-        public static GameStates gameState = GameStates.MAINMENU;
+        public static GameStates gameState = GameStates.PLAYING;
         public static ContentManager content;
         public static Player player;
 
@@ -173,12 +171,16 @@ namespace Asteroids
                     }
                     else    // If the timer reaches the limit, reset timer and game
                     {
+                        gameState = GameStates.PLAYING;
                         player.Reset();
                         deadTime = 0;
-                        gameState = GameStates.PLAYING;
                     }
                 }
-
+            }
+            else if (gameState == GameStates.HIGHSCORES)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                    gameState = GameStates.MAINMENU;
             }
 
             base.Update(gameTime);
@@ -196,14 +198,14 @@ namespace Asteroids
 
                 if (gameState == GameStates.MAINMENU)
                 {
-                    spriteBatch.DrawString(titleFont, "A S T E R O I D S", 
+                    spriteBatch.DrawString(titleFont, "A S T E R O I D S",
                         new Vector2((WindowWidth / 2) - (titleFont.MeasureString(
                             "A S T E R O I D S").X / 2) + 30, 150), Color.White);
                     spriteBatch.DrawString(font, "To play, press <Enter>",
                         new Vector2((WindowWidth / 2) - (font.MeasureString(
                             "To play, press <Enter>").X / 2) + 25, 500), Color.White);
                 }
-                else
+                else if (gameState == GameStates.PLAYING || gameState == GameStates.ROUNDOVER) 
                 {
                     if (gameState == GameStates.PLAYING || gameState == GameStates.ROUNDOVER)
                     {
@@ -219,19 +221,6 @@ namespace Asteroids
                         // Draw each object in the List<GameObject>
                         asteroids.Draw(spriteBatch, gameTime);
                     }
-                    else if (gameState == GameStates.GAMEOVER)
-                    {
-                        gameOverMessage.Display(new Vector2(WindowWidth / 2 - font.MeasureString(gameOverMessage.Message).X / 2,
-                            WindowHeight / 2 - 100), spriteBatch, gameTime);
-
-                        if (gameOverMessage.finished)
-                        {
-                            gameState = GameStates.PLAYING;
-                            gameOverMessage.finished = false;
-                            ResetGameFull();
-                        }
-                    }
-
                     // Draw information to the screen
                     spriteBatch.DrawString(font, "S C O R E : " + GetScore(), new Vector2((WindowWidth / 2) -
                         (font.MeasureString("S C O R E : " + GetScore()).X / 2), 10), Color.White);
@@ -239,6 +228,31 @@ namespace Asteroids
                         Color.White);
                     spriteBatch.DrawString(font, "L E V E L : " + level, new Vector2(10, WindowHeight - 100),
                         Color.White);
+                }
+
+                else if (gameState == GameStates.GAMEOVER)
+                {
+                    gameOverMessage.Display(new Vector2(WindowWidth / 2 - font.MeasureString(gameOverMessage.Message).X / 2,
+                        WindowHeight / 2 - 100), spriteBatch, gameTime);
+
+                    if (gameOverMessage.finished)
+                    {
+                        gameState = GameStates.HIGHSCORES;
+                        gameOverMessage.finished = false;
+                        ResetGameFull();
+                    }
+                }
+                else if (gameState == GameStates.HIGHSCORES)
+                {
+                    List<HighScore> topScores = ioManager.GetHighScores(5);
+
+                    for (int i = 0; i < topScores.Count; i++)
+                    {
+                        spriteBatch.DrawString(font, "Name: " + topScores[i].Name + " ------- " + topScores[i].Score,
+                            new Vector2(425, i * 50 + 175), Color.White);
+                    }
+                    spriteBatch.DrawString(titleFont, "H I G H S C O R E S", new Vector2(WindowWidth / 2 - (
+                        titleFont.MeasureString("H I G H S C O R E S").X / 2), 80), Color.White);
                 }
             }
             spriteBatch.End();
