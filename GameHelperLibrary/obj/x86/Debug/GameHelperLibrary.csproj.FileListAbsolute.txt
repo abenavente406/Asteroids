@@ -1,0 +1,6 @@
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.pdb
