@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroids", "Asteroids\Asteroids\Asteroids.csproj", "{303C5C42-F6D5-4013-9840-8BFCDE5D3B14}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "AsteroidsContent", "Asteroids\AsteroidsContent\AsteroidsContent.contentproj", "{D1EBC156-6A99-46E5-9FC7-800923E624B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsteroidsContent", "Asteroids\AsteroidsContent\AsteroidsContent.contentproj", "{D1EBC156-6A99-46E5-9FC7-800923E624B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHelperLibrary", "..\GameHelperLibrary\GameHelperLibrary\GameHelperLibrary.csproj", "{0FC0A4DE-BC3D-4B16-9C78-6AB679C0BC3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHelperLibrary", "GameHelperLibrary\GameHelperLibrary.csproj", "{0FC0A4DE-BC3D-4B16-9C78-6AB679C0BC3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

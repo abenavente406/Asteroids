@@ -36,14 +36,14 @@ namespace Asteroids.Objects
             Random rand = new Random();
             Vector2 asteroidPos = Vector2.Zero;
 
-            for (int asteroidCount = 0; asteroidCount < 2 + Math.Truncate(AsteroidGame.level * 1.3); asteroidCount++)
+            for (int asteroidCount = 0; asteroidCount < 2 + Math.Truncate(GameplayState.level * 1.3); asteroidCount++)
             {
                 // Keep trying to assign a position until it is far enough from the player
                 do
                 {
-                    asteroidPos = new Vector2(rand.Next(0, AsteroidGame.WindowWidth), rand.Next(0, AsteroidGame.WindowHeight));
-                } while (Vector2.Distance(new Vector2(AsteroidGame.WindowWidth / 2, 
-                    AsteroidGame.WindowHeight / 2), asteroidPos) < 200);
+                    asteroidPos = new Vector2(rand.Next(0, AsteroidGame.ScreenBounds.Width), rand.Next(0, AsteroidGame.ScreenBounds.Height));
+                } while (Vector2.Distance(new Vector2(AsteroidGame.ScreenBounds.Width / 2, 
+                    AsteroidGame.ScreenBounds.Height / 2), asteroidPos) < 200);
                 asteroids.Add(new Asteroid(largeAsteroidTexture, asteroidPos, new Vector2(rand.Next(-(int)topSpeed, (int)topSpeed), 
                     rand.Next(-(int)topSpeed, (int)topSpeed)), (float)rand.NextDouble() * MathHelper.TwoPi, Size.LARGE));
 
@@ -54,7 +54,7 @@ namespace Asteroids.Objects
         {
 
             asteroids.ForEach(delegate(Asteroid a) {
-                AsteroidGame.shots.ForEach(delegate(Shot s)
+                GameplayState.shots.ForEach(delegate(Shot s)
                 {
                     // If the asteroid intersects with a shot
                     if (a.Colliding(s))
@@ -80,7 +80,7 @@ namespace Asteroids.Objects
             switch (a.size)
             {
                 case Size.SMALL:
-                    AsteroidGame.score += 100;
+                    GameplayState.score += 100;
                     break;
                 case Size.LARGE:
                     asteroids.Add(new Asteroid(smallAsteroidTexture, a.Position, new Vector2(
@@ -89,13 +89,13 @@ namespace Asteroids.Objects
                     asteroids.Add(new Asteroid(smallAsteroidTexture, a.Position, new Vector2(
                         rand.Next(-(int)topSpeed, (int)topSpeed), rand.Next(-(int)topSpeed, (int)topSpeed)), 
                         (float)(rand.NextDouble() * MathHelper.PiOver2), Size.SMALL));
-                    AsteroidGame.score += 200;
+                    GameplayState.score += 200;
                     break;
             }
 
             asteroids.Remove(a);
             s.liveTime = 0;
-            AsteroidGame.shots.Remove(s);
+            GameplayState.shots.Remove(s);
         }
     }
 }

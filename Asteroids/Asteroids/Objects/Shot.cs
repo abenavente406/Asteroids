@@ -34,7 +34,7 @@ namespace Asteroids.Objects
             _scale = 0.5f;
             SetTexture(content, "laserGreen");
 
-            AsteroidGame.shots.Add(this);
+            GameplayState.shots.Add(this);
         }
 
         public override void Update(GameTime gameTime)
@@ -47,8 +47,8 @@ namespace Asteroids.Objects
             }
             else    // When the livetime reaches 0, remove it
             {
-                AsteroidGame.objects.Remove(this);
-                AsteroidGame.shots.Remove(this);
+                GameplayState.objects.Remove(this);
+                GameplayState.shots.Remove(this);
                 live = false;
             }
         }

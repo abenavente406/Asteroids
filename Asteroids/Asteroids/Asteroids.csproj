@@ -75,6 +75,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsteroidGame.cs" />
     <Compile Include="Objects\Asteroid.cs" />
     <Compile Include="Objects\AsteroidManager.cs" />
     <Compile Include="Objects\GameObject.cs" />
@@ -83,8 +84,10 @@
     <Compile Include="OnScreenMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="AsteroidGame.cs" />
+    <Compile Include="States\GameplayState.cs" />
     <Compile Include="ScrollingBackground.cs" />
+    <Compile Include="States\BaseGameState.cs" />
+    <Compile Include="States\MainMenuState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -93,7 +96,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\GameHelperLibrary\GameHelperLibrary\GameHelperLibrary.csproj">
+    <ProjectReference Include="..\..\GameHelperLibrary\GameHelperLibrary.csproj">
       <Project>{0FC0A4DE-BC3D-4B16-9C78-6AB679C0BC3D}</Project>
       <Name>GameHelperLibrary</Name>
     </ProjectReference>

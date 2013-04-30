@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\bg.xnb</Output>
-      <Time>2013-01-30T20:15:34.0545649-05:00</Time>
+      <Time>2013-04-29T19:23:47.3215958-04:00</Time>
     </Item>
     <Item>
       <Source>laserGreen.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\laserGreen.xnb</Output>
-      <Time>2013-01-30T20:15:34.070165-05:00</Time>
+      <Time>2013-04-29T19:23:47.325596-04:00</Time>
     </Item>
     <Item>
       <Source>meteorBig.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\meteorBig.xnb</Output>
-      <Time>2013-01-30T20:15:34.070165-05:00</Time>
+      <Time>2013-04-29T19:23:47.3525975-04:00</Time>
     </Item>
     <Item>
       <Source>meteorSmall.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\meteorSmall.xnb</Output>
-      <Time>2013-01-30T20:15:34.070165-05:00</Time>
+      <Time>2013-04-29T19:23:47.3545976-04:00</Time>
     </Item>
     <Item>
       <Source>player.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\player.xnb</Output>
-      <Time>2013-01-30T20:15:34.085765-05:00</Time>
+      <Time>2013-04-29T19:23:47.3935999-04:00</Time>
     </Item>
     <Item>
       <Source>explosion_sheet.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\explosion_sheet.xnb</Output>
-      <Time>2013-02-15T22:05:15.4796789-05:00</Time>
+      <Time>2013-04-29T19:23:47.3235959-04:00</Time>
     </Item>
     <Item>
       <Source>Blank.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\Blank.xnb</Output>
-      <Time>2013-02-15T22:12:14.0976225-05:00</Time>
+      <Time>2013-04-29T19:23:47.2375909-04:00</Time>
     </Item>
     <Item>
       <Source>starfield.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield.xnb</Output>
-      <Time>2013-02-15T23:15:44.4135601-05:00</Time>
+      <Time>2013-04-29T19:23:47.3956-04:00</Time>
     </Item>
     <Item>
       <Source>starfield_large.png</Source>
@@ -80,16 +80,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield_large.xnb</Output>
-      <Time>2013-02-15T23:25:28.867989-05:00</Time>
+      <Time>2013-04-29T19:23:47.4076007-04:00</Time>
     </Item>
     <Item>
-      <Source>SpriteFont1.spritefont</Source>
-      <Name>SpriteFont1</Name>
+      <Source>menuFont.spritefont</Source>
+      <Name>menuFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2013-01-30T20:16:19.3903881-05:00</Time>
+      <Output>C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\menuFont.xnb</Output>
+      <Time>2013-04-29T19:23:47.3175955-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -4,12 +4,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using GameHelperLibrary;
 
 namespace Asteroids.Objects
 {
     public class Player : GameObject
     {
-        KeyboardState newState;
         ContentManager gameContent;
 
         public bool alive    = true;
@@ -19,6 +19,8 @@ namespace Asteroids.Objects
         private float thrustSpeed = 4.5f;
         private int shotCoolDown  = 0;
         private int shotCoolMax   = 10;
+
+        private int deadTime = 0;
 
         public override Vector2 Speed
         {
@@ -30,22 +32,53 @@ namespace Asteroids.Objects
             }
         }
 
+        SpriteSheet explosionSheet;
+        Animation explosion;
+
         public Player(ContentManager content)
-            : base(new Vector2(AsteroidGame.WindowWidth / 2, AsteroidGame.WindowHeight / 2))
+            : base(new Vector2(AsteroidGame.ScreenBounds.Width / 2, AsteroidGame.ScreenBounds.Height / 2))
         {
             topSpeed = 4;
             SetTexture(content, "player");
             gameContent = content;
             _scale = 0.65f;
             _mass = 40;
+
+            // Load the explosion spritesheet and explosion animation
+            explosionSheet = new SpriteSheet(content.Load<Texture2D>("explosion_sheet"),
+                90, 90, AsteroidGame.graphics.GraphicsDevice);
+            explosion = new Animation(new Texture2D[] {explosionSheet.GetSubImage(0, 0),
+                explosionSheet.GetSubImage(1, 0), explosionSheet.GetSubImage(2, 0),
+                explosionSheet.GetSubImage(3, 0), explosionSheet.GetSubImage(4, 0),
+                explosionSheet.GetSubImage(0, 1),
+                explosionSheet.GetSubImage(1, 1), explosionSheet.GetSubImage(2, 1),
+                explosionSheet.GetSubImage(3, 1), explosionSheet.GetSubImage(4, 1),
+                content.Load<Texture2D>("Blank") , content.Load<Texture2D>("Blank")}, 100f);
         }
 
         public override void Update(GameTime gameTime)
         {
-            newState = Keyboard.GetState();
-
             if (lives == 0)
+            {
                 gameOver = true;
+                return;
+            }
+
+            if (!alive)
+            {
+                if (deadTime < 75)
+                {
+                    deadTime++;
+                    if (deadTime > 60)      // Keep the explosion blank. Otherwise, it'll keep going
+                        explosion.CurrentFrame = explosion.Images.Length - 2;
+                    return;
+                }
+                else
+                {
+                    Reset();
+                    deadTime = 0;
+                }
+            }
 
             if (shotCoolDown > 0)
                 shotCoolDown--;
@@ -61,7 +94,7 @@ namespace Asteroids.Objects
                 }
             });
 
-            if (newState.IsKeyDown(Keys.Up))
+            if (InputHandler.KeyDown(Keys.Up))
             {
                 MovementAngle = DrawAngle;
                 // Get the angular velocity from the movement angle
@@ -70,9 +103,9 @@ namespace Asteroids.Objects
                 ApplyForce(thrust);
             }
 
-            if (newState.IsKeyDown(Keys.Right))
+            if (InputHandler.KeyDown(Keys.Right))
                 DrawAngle += rotationSpeed;
-            else if (newState.IsKeyDown(Keys.Left))
+            else if (InputHandler.KeyDown(Keys.Left))
                 DrawAngle -= rotationSpeed;
 
             Speed    += Acceleration;
@@ -80,11 +113,19 @@ namespace Asteroids.Objects
 
             Acceleration *= 0;  // Reset the acceleration with each iteration
 
-            if (newState.IsKeyDown(Keys.Space) && shotCoolDown == 0)
+            if (InputHandler.KeyDown(Keys.Space) && shotCoolDown == 0)
             {
                 new Shot(gameContent, this, DrawAngle);
                 shotCoolDown = shotCoolMax;
             }
+        }
+
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime) 
+        {
+            if (alive)
+                spriteBatch.Draw(texture, Position, null, Color.White, DrawAngle, TextureOrigin, _scale, SpriteEffects.None, 0f);
+            else
+                explosion.Draw(spriteBatch, gameTime, Position - TextureOrigin);
         }
 
         /// <summary>
@@ -93,7 +134,7 @@ namespace Asteroids.Objects
         public void Reset()
         {
             alive = true;
-            Position = new Vector2(AsteroidGame.WindowWidth / 2, AsteroidGame.WindowHeight / 2);
+            Position = new Vector2(AsteroidGame.ScreenBounds.Width / 2, AsteroidGame.ScreenBounds.Height / 2);
             Speed = Vector2.Zero;
             DrawAngle = 0.0f;
             MovementAngle = 0.0f;

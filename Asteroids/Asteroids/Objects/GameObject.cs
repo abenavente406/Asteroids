@@ -50,17 +50,17 @@ namespace Asteroids.Objects
             {
                 // Wrap the position of the objects around the screen
                 if (value.X < 0)
-                    value.X = AsteroidGame.WindowWidth;
+                    value.X = AsteroidGame.ScreenBounds.Width;
                 if (value.Y < 0)
-                    value.Y = AsteroidGame.WindowHeight;
+                    value.Y = AsteroidGame.ScreenBounds.Height;
 
-                if (value.X > AsteroidGame.WindowWidth)
+                if (value.X > AsteroidGame.ScreenBounds.Width)
                     value.X = 0;
-                if (value.Y > AsteroidGame.WindowHeight)
+                if (value.Y > AsteroidGame.ScreenBounds.Height)
                     value.Y = 0;
 
                 _pos = Vector2.Clamp(new Vector2(value.X, value.Y), new Vector2(0, 0), 
-                       new Vector2(AsteroidGame.WindowWidth, AsteroidGame.WindowHeight));
+                       new Vector2(AsteroidGame.ScreenBounds.Width, AsteroidGame.ScreenBounds.Height));
             }
         }
         public virtual Vector2 Speed { get { return _speed; } set { _speed = value; } }
@@ -68,19 +68,47 @@ namespace Asteroids.Objects
         public Vector2 Resistance    { get { return _resistance; } }
 
         // The center of the texture, NOT RELATIVE to location
-        public Vector2 TextureOrigin { get { return new Vector2(texture.Width / 2, texture.Height / 2); } }
+        public Vector2 TextureOrigin
+        {
+            get { return new Vector2(texture.Width / 2, texture.Height / 2); }
+        }
         // The center of the texture, RELATIVE to location
-        public Vector2 Origin        { get { return new Vector2(Position.X + texture.Width / 2, Position.Y + 
-                                             texture.Height / 2); } }
+        public Vector2 Origin
+        {
+            get
+            {
+                return new Vector2(Position.X + texture.Width / 2, Position.Y +
+                texture.Height / 2);
+            }
+        }
 
-        public float MovementAngle   { get { return (float)_movementAngle; } protected set { _movementAngle = 
-                                             MathHelper.WrapAngle((float)value - MathHelper.PiOver2); } }
-        public float DrawAngle       { get { return (float)_drawAngle; } protected set { _drawAngle = 
-                                             MathHelper.WrapAngle((float)value); } }
+        public float MovementAngle
+        {
+            get { return (float)_movementAngle; }
+            protected set
+            {
+                _movementAngle =
+                    MathHelper.WrapAngle((float)value - MathHelper.PiOver2);
+            }
+        }
+        public float DrawAngle
+        {
+            get { return (float)_drawAngle; }
+            protected set
+            {
+                _drawAngle =
+                    MathHelper.WrapAngle((float)value);
+            }
+        }
 
-        public Rectangle Bounds      { get { return new Rectangle((int)Position.X, (int)Position.Y, 
-                                            (int)(texture.Width * _scale), (int)(texture.Height * _scale)); } }
-
+        public Rectangle Bounds
+        {
+            get
+            {
+                return new Rectangle((int)Position.X, (int)Position.Y,
+                    (int)(texture.Width * _scale), (int)(texture.Height * _scale));
+            }
+        }
         #endregion
 
         /// <summary>
@@ -95,7 +123,7 @@ namespace Asteroids.Objects
 
         public abstract void Update(GameTime gameTime);
 
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        public virtual void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             spriteBatch.Draw(texture, Position, null, Color.White, DrawAngle, TextureOrigin, _scale, SpriteEffects.None, 0f);
         }
@@ -131,41 +159,6 @@ namespace Asteroids.Objects
         }
 
         /// <summary>
-        /// Gets if two circular objects are colliding
-        /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns>If a collision is detected</returns>
-        public bool CollidingCircles(GameObject A, GameObject B)
-        {
-            return Vector2.Distance(A.Origin, B.Origin) < A.Bounds.Width / 2 + B.Bounds.Width / 2;
-        }
-
-        /// <summary>
-        /// Gets if two irregular shaped objects are colliding (Per-Pixel)
-        /// </summary>
-        /// <param name="this"></param>
-        /// <param name="other"></param>
-        /// <returns></returns>
-        public bool CollidingWith(GameObject @this, GameObject other)
-        {
-            // Get dimensions of texture
-            int widthOther = other.texture.Width * (int)Scale;
-            int heightOther = other.texture.Height * (int)Scale;
-            int widthMe = @this.texture.Width * (int)Scale;
-            int heightMe = @this.texture.Height * (int)Scale;
-
-            if (((Math.Min(widthOther, heightOther) > 100) ||  // at least avoid doing it
-                (Math.Min(widthMe, heightMe) > 100)))          // for small sizes (performance)
-            {
-                return Bounds.Intersects(other.Bounds) // If simple intersection fails, don't even bother with per-pixel
-                    && PerPixelCollision(@this, other);
-            }
-
-            return Bounds.Intersects(other.Bounds);
-        }
-
-        /// <summary>
         /// Gets if two rectangles are colliding
         /// </summary>
         /// <param name="other"></param>
@@ -173,46 +166,6 @@ namespace Asteroids.Objects
         public bool Colliding(GameObject other)
         {
             return this.Bounds.Intersects(other.Bounds);
-        }
-
-        /// <summary>
-        /// Checks per pixel if two objects are colliding
-        /// </summary>
-        /// <param name="this"></param>
-        /// <param name="other"></param>
-        /// <returns></returns>
-        static bool PerPixelCollision(GameObject @this, GameObject other)
-        {
-            // Get Color data of each Texture
-            Color[] bitsA = new Color[(int)(@this.texture.Width * @this.texture.Height * @this._scale)];
-            @this.texture.GetData(bitsA);
-            Color[] bitsB = new Color[(int)(other.texture.Width * other.texture.Height * other.Scale)];
-            other.texture.GetData(bitsB);
-
-            // Calculate the intersecting rectangle
-            int x1 = Math.Max(@this.Bounds.X, other.Bounds.X);
-            int x2 = Math.Min(@this.Bounds.X + @this.Bounds.Width, other.Bounds.X + other.Bounds.Width);
-
-            int y1 = Math.Max(@this.Bounds.Y, other.Bounds.Y);
-            int y2 = Math.Min(@this.Bounds.Y + @this.Bounds.Height, other.Bounds.Y + other.Bounds.Height);
-
-            // For each single pixel in the intersecting rectangle
-            for (int y = y1; y < y2; ++y)
-            {
-                for (int x = x1; x < x2; ++x)
-                {
-                    // Get the color from each texture
-                    Color a = bitsA[(x - @this.Bounds.X) + (y - @this.Bounds.Y) * (int)(@this.texture.Width * @this._scale)];
-                    Color b = bitsB[(x - other.Bounds.X) + (y - other.Bounds.Y) * (int)(other.texture.Width * other._scale)];
-
-                    if (a.A != 0 && b.A != 0) // If both colors are not transparent (the alpha channel is not 0), then there is a collision
-                    {
-                        return true;
-                    }
-                }
-            }
-            // If no collision occurred by now, we're clear.
-            return false;
         }
 
         /// <summary>

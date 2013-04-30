@@ -35,8 +35,8 @@ C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Conte
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\Blank.xnb
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield.xnb
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\starfield_large.xnb
-C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\SpriteFont1.xnb
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Asteroids.exe
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Asteroids.pdb
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\GameHelperLibrary.dll
 C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Git\Asteroids\Asteroids\Asteroids\bin\x86\Debug\Content\menuFont.xnb

@@ -4,3 +4,9 @@ C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHe
 C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.dll
 C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Git\Asteroids\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Git\Asteroids\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Git\Asteroids\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Anthony Benavente\Git\Asteroids\GameHelperLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Anthony Benavente\Git\Asteroids\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Git\Asteroids\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.pdb
